@@ -278,60 +278,119 @@ body {
 }
 
 /* Hero Slider */
-.hero-slider {
+.hero-video {
+
   position: relative;
+
   height: calc(100vh - 60px);
+
   max-height: 650px;
+
   margin-top: 70px;
+
   overflow: hidden;
-}
 
-.slider-container {
-  height: 100%;
-  width: 100%;
-  position: relative;
 }
+ 
+.background-video {
 
-.slide {
   position: absolute;
-  top: 0;
-  left: 0;
+
+  top: 50%;
+
+  left: 50%;
+
   width: 100%;
+
   height: 100%;
-  display: none;
-  will-change: transform;
-}
 
-.slide.active {
-  display: block;
-}
+  object-fit: cover;
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Full screen width & height */
-  object-position: center;
-  transform: scale(1.05); /* Cinematic zoom */
-  transition: transform 4s ease-in-out;
-  will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
+  transform: translate(-50%, -50%);
 
-.slide.active img {
-  transform: scale(1);
-} .slide::after {
-  content: "";
+  z-index: 0;
+
+}
+ 
+/* overlay for text clarity */
+
+.video-overlay {
+
   position: absolute;
+
   top: 0;
+
   left: 0;
+
   width: 100%;
+
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Adjust 0.35 to make it darker/lighter */
+
+  background: rgba(0,0,0,0.25);
+
   z-index: 1;
+
 }
+ 
+/* use your existing .slide-content styling exactly */
 
 .slide-content {
+
+  position: absolute;
+
+  top: 38%;
+
+  left: 50%;
+
+  transform: translate(-50%, -30%);
+
+  text-align: center;
+
+  color: var(--light-color);
+
+  width: 900px;
+
+  padding: 25px;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  transition: opacity 1s ease-in-out;
+
+}
+ 
+.slide-content.fade-in {
+
+  opacity: 1;
+
+}
+ 
+/* Mobile optimization */
+
+@media (max-width: 768px) {
+
+  .background-video {
+
+    display: none;
+
+  }
+
+  .hero-video {
+
+    background: url("images/index/hero1.jpg") center/cover no-repeat;
+
+  }
+
+  .slide-content {
+
+    background: rgba(0,0,0,0.4);
+
+  }
+
+}
+
+ slide-content {
   position: absolute;
   top: 38%;
   left: 50%;
@@ -339,9 +398,10 @@ body {
   text-align: center;
   color: var(--light-color);
   width: 900px;
-  padding: 25px;z-index: 2;
-} 
-
+  padding: 25px;
+  z-index: 2;
+}
+ 
 .slide-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 5vw, 3.2rem);
@@ -349,13 +409,12 @@ body {
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
-  text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.8),
-    0 4px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+               0 4px 8px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.5px;
   -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
 }
-
+ 
 .slide-content p {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(0.9rem, 1.8vw, 1.05rem);
@@ -365,134 +424,100 @@ body {
   border-radius: 10px;
   margin-bottom: 16px;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  border: 1px
 }
+/* Primary Button */
 
 .btn-primary {
-  margin: 0 10px;
+
   display: inline-block;
+
+  margin: 0 10px;
+
   background: linear-gradient(90deg, var(--primary-color), #4a7ba3);
+
   color: var(--light-color);
+
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
   padding: 14px 28px;
+
   border-radius: 28px;
+
   font-size: 0.875rem;
+
   font-weight: 600;
+
   text-transform: uppercase;
+
   letter-spacing: 0.5px;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   text-decoration: none;
-  transition: var(--transition);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
 }
+ 
+/* Hover and focus effects */
 
 .btn-primary:hover,
+
 .btn-primary:focus {
+
   background: linear-gradient(90deg, var(--accent-color), #e8c2a3);
+
   color: var(--dark-color);
+
   transform: translateY(-3px);
-  box-shadow: var(--shadow-dark);
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+  outline: none;
+
 }
+ 
+/* Button responsiveness */
 
 @media (max-width: 900px) {
-  .slide-content h1 {
-    font-size: clamp(1.75rem, 3.5vw, 2rem);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
-    -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.3);
-  }
-
-  .slide-content p {
-    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-    padding: 12px 20px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-    background: rgba(0, 0, 0, 0.55);
-  }
 
   .btn-primary {
-    padding: 12px 24px;
-    margin: 10px 0;
+
     display: block;
-    width: 100%;
+
+    width: fit-content;
+
+    margin: 12px auto;
+
+    padding: 12px 24px;
+
   }
+
 }
-
+ 
 @media (max-width: 600px) {
-  .slide-content {
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.55);
-    width: 90vw;
-  }
-
-  .slide-content h1 {
-    font-size: clamp(1.5rem, 3vw, 1.75rem);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.3);
-  }
-
-  .slide-content p {
-    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-    padding: 10px 15px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    background: rgba(0, 0, 0, 0.6);
-  }
 
   .btn-primary {
+
     padding: 10px 20px;
+
     font-size: 0.75rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+    border-radius: 24px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+
   }
+
 }
 
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  transform: translateY(-50%);
-}
+ 
 
-.slider-controls button {
-  background: rgba(249, 249, 249, 0.7);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.25rem;
-  color: var(--dark-color);
-  transition: var(--transition);
-}
-
-.slider-controls button:hover,
-.slider-controls button:focus {
-  background: var(--light-color);
-}
-
-.slider-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(249, 249, 249, 0.5);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.dot.active {
-  background: var(--light-color);
-}
 
 /* Section Transition Quote */
 .section-transition-quote {
