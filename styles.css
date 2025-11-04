@@ -290,15 +290,19 @@ body {
 
   overflow: hidden;
 
+  background: url("images/index/hero1.jpg") center/cover no-repeat; /* Fallback image */
+
 }
  
+/* Video sits behind text */
+
 .background-video {
 
   position: absolute;
 
-  top: 50%;
+  top: 0;
 
-  left: 50%;
+  left: 0;
 
   width: 100%;
 
@@ -306,13 +310,11 @@ body {
 
   object-fit: cover;
 
-  transform: translate(-50%, -50%);
-
   z-index: 0;
 
 }
  
-/* overlay for text clarity */
+/* Slight overlay for readability */
 
 .video-overlay {
 
@@ -326,13 +328,13 @@ body {
 
   height: 100%;
 
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
 
   z-index: 1;
 
 }
  
-/* use your existing .slide-content styling exactly */
+/* Hero text overlay */
 
 .slide-content {
 
@@ -352,13 +354,41 @@ body {
 
   padding: 25px;
 
-  z-index: 2;
+  z-index: 2; /* Must be higher than overlay (1) and video (0) */
 
-  opacity: 0;
-
-  transition: opacity 1s ease-in-out;
+  opacity: 1;
 
 }
+ 
+@media (max-width: 768px) {
+
+  .background-video {
+
+    display: none;
+
+  }
+ 
+  .hero-video {
+
+    background: url("images/index/hero1.jpg") center/cover no-repeat;
+
+  }
+ 
+  .slide-content {
+
+    width: 90%;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+  }
+
+}
+
+ 
  
 .slide-content.fade-in {
 
