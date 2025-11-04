@@ -1,0 +1,462 @@
+
+      /* Hero Section */
+
+      .hero-section {
+
+        position: relative;
+
+        height: 80vh;
+
+        background: url("images/4.JPG");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        overflow: hidden;
+
+        margin: 0;
+
+        padding: 0;
+
+        border: none;
+
+      }
+ 
+      .hero-section .hero-overlay {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.3);
+
+        z-index: 0;
+
+      }
+ 
+      .hero-content {
+
+        position: relative;
+
+        z-index: 1;
+
+        color: #fff;
+
+        padding: 40px;
+
+        background: rgba(0, 0, 0, 0.3);
+
+        border-radius: 12px;
+
+      }
+ 
+      .hero-content h1 {
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 3.5rem;
+
+        margin-bottom: 15px;
+
+      }
+ 
+      .hero-content p {
+
+        font-family: "Lora", serif;
+
+        font-size: 1.3rem;
+
+        margin-bottom: 20px;
+
+      }
+ 
+      @media (max-width: 768px) {
+
+        .hero-section {
+
+          height: 60vh;
+
+        }
+
+        .hero-content h1 {
+
+          font-size: 2.5rem;
+
+        }
+
+      }
+ 
+      /* Overview Section */
+
+      .overview-section {
+
+        padding: 60px 20px;
+
+        background-color: #f8f8f8;
+
+        text-align: center;
+
+      }
+ 
+      h2.section-heading {
+
+        display: block;
+
+        font-size: 1.5em;
+
+        margin-block-start: 0.83em;
+
+        margin-block-end: 0.83em;
+
+        margin-inline-start: 0px;
+
+        margin-inline-end: 0px;
+
+        font-weight: bold;
+
+        unicode-bidi: isolate;
+
+      }
+ 
+      .overview-container {
+
+        max-width: 800px;
+
+        margin: 0 auto;
+
+      }
+ 
+      .overview-divider {
+
+        width: 100px;
+
+        height: 2px;
+
+        background: var(--accent-color);
+
+        margin: 20px auto;
+
+      }
+ 
+      /* Venue Cards Section (Styled as Flexible Packages for consistency) */
+
+      .packages-section {
+
+        padding: 60px 20px;
+
+        text-align: center;
+
+      }
+ 
+      .packages-container {
+
+        max-width: 1200px;
+
+        margin: 0 auto;
+
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+        gap: 30px;
+
+      }
+ 
+      .package-card {
+
+        background: #fff;
+
+        border-radius: 12px;
+
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+        padding: 20px;
+
+        transition: transform 0.3s;
+
+        display: flex;
+
+        flex-direction: column;
+
+      }
+ 
+      .package-card:hover {
+
+        transform: translateY(-10px);
+
+      }
+ 
+      .package-card img {
+
+        width: 100%;
+
+        height: 200px;
+
+        object-fit: cover;
+
+        border-radius: 8px;
+
+        margin-bottom: 15px;
+
+      }
+ 
+      .package-card h3 {
+
+        font-family: "Playfair Display", serif;
+
+        color: var(--primary-color);
+
+        margin-bottom: 15px;
+
+      }
+ 
+      .package-card p {
+
+        font-family: "Lora", serif;
+
+        text-align: left;
+
+        margin-bottom: 20px;
+
+      }
+ 
+      @media (max-width: 768px) {
+
+        .packages-container {
+
+          grid-template-columns: 1fr;
+
+        }
+
+      }
+ 
+     /* CTA Section */
+
+      .cta-section {
+
+        padding: 40px 20px;
+
+        background: var(--primary-color);
+
+        color: #fff;
+
+        text-align: center;
+
+      }
+ 
+      .cta-container {
+
+        max-width: 800px;
+
+        margin: 0 auto;
+
+      }
+ 
+      .cta-container h2 {
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 2.5rem;
+
+        margin-bottom: 15px;
+
+        color: #fff;
+
+      }
+ 
+      .cta-container p {
+
+        font-family: "Lora", serif;
+
+        font-size: 1.2rem;
+
+        margin-bottom: 20px;
+
+      }
+  
+      /* Modal */
+
+      .modal {
+
+        display: none;
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.7);
+
+        align-items: center;
+
+        justify-content: center;
+
+        z-index: 1000;
+
+      }
+ 
+      .modal-content {
+
+        background: #fff;
+
+        padding: 30px;
+
+        border-radius: 12px;
+
+        text-align: center;
+
+        max-width: 500px;
+
+        width: 90%;
+
+        animation: fadeIn 0.5s ease;
+
+        position: relative;
+
+      }
+ 
+      .modal-close {
+
+        position: absolute;
+
+        top: 10px;
+
+        right: 15px;
+
+        font-size: 1.5rem;
+
+        cursor: pointer;
+
+        color: #aaa;
+
+      }
+ 
+      .modal-close:hover {
+
+        color: #333;
+
+      }
+ 
+      .contact-form input,
+
+      .contact-form textarea {
+
+        width: 100%;
+
+        padding: 10px;
+
+        margin-bottom: 15px;
+
+        border: 1px solid #ccc;
+
+        border-radius: 6px;
+
+        font-family: "Lora", serif;
+
+      }
+ 
+      .contact-form button {
+
+        background: #2b4e72; /* Fallback for --primary-color */
+
+        background: var(--primary-color, #2b4e72);
+
+        color: #f9f9f9; /* Fallback for --light-color */
+
+        color: var(--light-color, #f9f9f9);
+
+        border: none;
+
+        padding: 10px 20px;
+
+        border-radius: 6px;
+
+        cursor: pointer;
+
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 0.9rem;
+
+        transition: background 0.3s;
+
+        margin-top: auto;
+
+      }
+ 
+      .contact-form button:hover {
+
+        background: #d4a373; /* Fallback for --highlight-color */
+
+        background: var(--highlight-color, #d4a373);
+
+      }
+ 
+      @keyframes fadeIn {
+
+        from {
+
+          opacity: 0;
+
+          transform: scale(0.95);
+
+        }
+
+        to {
+
+          opacity: 1;
+
+          transform: scale(1);
+
+        }
+
+      }
+ 
+      @media (max-width: 600px) {
+
+        .hero-content h1 {
+
+          font-size: 2rem;
+
+        }
+
+        .packages-container {
+
+          grid-template-columns: 1fr;
+
+        }
+
+        .cta-container h2 {
+
+          font-size: 2rem;
+
+        }
+
+        .cta-container p {
+
+          font-size: 1rem;
+
+        }
+
+      }

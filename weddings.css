@@ -43,7 +43,7 @@
   background: rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   max-width: 800px;
-  width: 90%;
+  width: 100%;
   transform: translateY(20px);
   opacity: 0;
   animation: fadeIn 0.5s ease forwards 0.5s;
@@ -173,126 +173,331 @@
   background: #f9f1f5;
 }
 
-/* Gallery Section */
-.gallery-section {
-  padding: 60px 20px;
-  background-color: #f9f1f5;
+
+
+   /* WEDDING GALLERY SECTION */
+
+
+.wedding-gallery {
+
+  /* background-color: ; */
+
+  color: var(--light-color);
+
   text-align: center;
-}
 
-.gallery-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+  padding: 80px 20px;
 
-.gallery-item {
   position: relative;
+
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
 
-.gallery-item.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
+ 
+/* Section label (small text above title) */
 
-.gallery-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-zoom {
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.gallery-zoom:hover {
-  background: var(--accent-color);
-  transform: scale(1.1);
-}
-
-.gallery-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.gallery-modal.active {
-  display: flex;
-}
-
-.gallery-modal-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   text-align: center;
-  max-width: 80%;
-  max-height: 80%;
+  margin-bottom: 1rem;
+}
+ 
+/* Main heading */
+
+.gallery-title {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2rem, 4vw, 2.6rem);
+
+  color: var(--light-color);
+
+  margin-bottom: 50px;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+}
+ 
+/* Gallery Grid */
+
+.wedding-gallery-grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 24px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+}
+ 
+/* Each image card */
+
+.wedding-photo {
+
   position: relative;
-}
 
-.gallery-modal-content img {
-  max-width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-  border-radius: 8px;
-}
+  overflow: hidden;
 
-.gallery-modal-caption {
-  font-family: 'Lora', serif;
-  margin-top: 10px;
-  color: #333;
-}
+  border-radius: 14px;
 
-.gallery-modal-close {
+  flex: 1 1 260px;
+
+  max-width: 300px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  background: rgba(255, 255, 255, 0.03);
+
+}
+ 
+.wedding-photo:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+
+}
+ 
+/* Image */
+
+.wedding-photo-img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  transition: transform 0.5s ease;
+
+  filter: brightness(0.95);
+
+}
+ 
+.wedding-photo:hover .wedding-photo-img {
+
+  transform: scale(1.05);
+
+  filter: brightness(1);
+
+}
+ 
+/* Overlay */
+
+.wedding-photo-overlay {
+
   position: absolute;
-  top: 10px;
-  right: 15px;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease-in-out;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+}
+ 
+.wedding-photo:hover .wedding-photo-overlay {
+
+  opacity: 1;
+
+}
+ 
+/* Zoom Icon */
+
+.wedding-photo-zoom {
+
+  background: linear-gradient(90deg, var(--primary-color), #4a7ba3);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: var(--light-color);
+
   font-size: 1.5rem;
+
+  padding: 12px 14px;
+
+  border-radius: 50%;
+
   cursor: pointer;
-  color: #333;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.3s ease, background 0.3s ease;
+
+}
+ 
+.wedding-photo-zoom:hover {
+
+  background: linear-gradient(90deg, var(--accent-color), #e8c2a3);
+
+  color: var(--dark-color);
+
+  transform: scale(1.15);
+
+}
+ 
+/* Modal (Lightbox) */
+
+.wedding-modal {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.9);
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+
+  animation: fadeIn 0.3s ease forwards;
+
+}
+ 
+.wedding-modal.active {
+
+  display: flex;
+
+}
+ 
+.wedding-modal-content {
+
+  position: relative;
+
+  background: #000;
+
+  border-radius: 10px;
+
+  max-width: 90%;
+
+  max-height: 85vh;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  overflow: hidden;
+
+}
+ 
+.wedding-modal-content img {
+
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  border-radius: 10px;
+
+}
+ 
+.wedding-modal-close {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 25px;
+
+  font-size: 2rem;
+
+  color: var(--light-color);
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+
+}
+ 
+.wedding-modal-close:hover {
+
+  color: var(--accent-color);
+
+}
+ 
+/* Modal caption */
+
+#weddingModalCaption {
+
+  color: var(--light-color);
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 1rem;
+
+  text-align: center;
+
+  margin-top: 12px;
+
+  opacity: 0.85;
+
+}
+ 
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .gallery-title {
+
+    font-size: 1.8rem;
+
+  }
+ 
+  .wedding-photo {
+
+    max-width: 90%;
+
+  }
+ 
+  .wedding-photo-zoom {
+
+    font-size: 1.3rem;
+
+    padding: 10px 12px;
+
+  }
+
+}
+ 
+/* Animation */
+
+@keyframes fadeIn {
+
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+
 }
 
+ 
 /* Wedding Journey Section */
 .journey-section {
   padding: 60px 20px;
