@@ -166,69 +166,142 @@
 
 /* Festive Packages Section */
 .packages-section {
-  padding: 60px 20px;
-  text-align: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .packages-tabs {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .tab-button {
-  background: #fff;
-  border: 1px solid var(--primary-color);
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  transition: background 0.3s, color 0.3s;
+    background: #fff;
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s, color 0.3s;
 }
 
 .tab-button.active, .tab-button:hover {
-  background: var(--accent-color);
-  color: #fff;
+    background: var(--accent-color);
+    color: #fff;
 }
 
 .packages-content {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .package-tab {
-  display: none;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .package-tab.active {
-  display: block;
-  animation: fadeIn 0.5s ease;
+    display: block;
+    animation: fadeIn 0.5s ease;
 }
 
 .package-tab img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .package-tab h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary-color);
-  margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
 .package-tab p {
-  font-family: 'Lora', serif;
-  margin-bottom: 15px;
+    font-family: 'Lora', serif;
+    margin-bottom: 15px;
+}
+
+.party-details {
+    text-align: left;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f1e9;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.party-details::before {
+    content: '❄ ❄ ❄';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    animation: snowflake-fall 6s infinite linear;
+}
+
+@keyframes snowflake-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.party-details h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.party-details ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.party-details ul li {
+    font-family: 'Lora', serif;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.party-details ul li::before {
+    content: '🎄';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+}
+
+.party-details p {
+    font-family: 'Lora', serif;
+    margin-bottom: 10px;
+}
+
+.party-details a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.party-details a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .packages-tabs {
+        flex-direction: column;
+    }
 }
 
 /* Festive Moments Section */

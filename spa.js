@@ -65,35 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Testimonial Carousel
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-    let currentIndex = 0;
+    // const testimonialCards = document.querySelectorAll('.testimonial-card');
+    // const prevButton = document.querySelector('.carousel-prev');
+    // const nextButton = document.querySelector('.carousel-next');
+    // let currentIndex = 0;
 
-    function showTestimonial(index) {
-      testimonialCards.forEach((card, i) => {
-        card.classList.remove('active');
-        if (i === index) {
-          card.classList.add('active');
-        }
-      });
-    }
+    // function showTestimonial(index) {
+    //   testimonialCards.forEach((card, i) => {
+    //     card.classList.remove('active');
+    //     if (i === index) {
+    //       card.classList.add('active');
+    //     }
+    //   });
+    // }
 
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? testimonialCards.length - 1 : currentIndex - 1;
-      showTestimonial(currentIndex);
-    });
+    // prevButton.addEventListener('click', () => {
+    //   currentIndex = (currentIndex === 0) ? testimonialCards.length - 1 : currentIndex - 1;
+    //   showTestimonial(currentIndex);
+    // });
 
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === testimonialCards.length - 1) ? 0 : currentIndex + 1;
-      showTestimonial(currentIndex);
-    });
+    // nextButton.addEventListener('click', () => {
+    //   currentIndex = (currentIndex === testimonialCards.length - 1) ? 0 : currentIndex + 1;
+    //   showTestimonial(currentIndex);
+    // });
 
     // Auto-advance carousel
-    setInterval(() => {
-      currentIndex = (currentIndex === testimonialCards.length - 1) ? 0 : currentIndex + 1;
-      showTestimonial(currentIndex);
-    }, 5000);
+    // setInterval(() => {
+    //   currentIndex = (currentIndex === testimonialCards.length - 1) ? 0 : currentIndex + 1;
+    //   showTestimonial(currentIndex);
+    // }, 5000);
 
     // Animation on Scroll
     const animatedElements = document.querySelectorAll('[data-animate]');
