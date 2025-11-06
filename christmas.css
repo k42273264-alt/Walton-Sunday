@@ -3,7 +3,7 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   max-height: 600px;
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(43, 78, 114, 0.3), rgba(212, 163, 115, 0.3));
+  /* background: linear-gradient(45deg, rgba(43, 78, 114, 0.3), rgba(212, 163, 115, 0.3)); */
   z-index: 0;
 }
 
@@ -145,13 +145,13 @@
   position: absolute;
   font-size: 1.5rem;
   color: var(--primary-color);
-  animation: snowflake 4s infinite linear;
+  /* animation: snowflake 4s infinite linear; */
 }
 
-@keyframes snowflake {
+/* @keyframes snowflake {
   0% { transform: translateX(-150%); }
   100% { transform: translateX(150%); }
-}
+} */
 
 .overview-container p[data-animate] {
   opacity: 0;
@@ -214,8 +214,9 @@
 
 .package-tab img {
     width: 100%;
-    height: 300px;
+    height: 600px;
     object-fit: cover;
+    object-position: bottom;
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -241,20 +242,20 @@
     overflow: hidden;
 }
 
-.party-details::before {
+/* .party-details::before {
     content: '❄ ❄ ❄';
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 1.2rem;
     color: var(--accent-color);
-    animation: snowflake-fall 6s infinite linear;
-}
+    /* animation: snowflake-fall 6s infinite linear; */
 
-@keyframes snowflake-fall {
+
+/* @keyframes snowflake-fall {
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100%); }
-}
+} */
 
 .party-details h4 {
     font-family: 'Playfair Display', serif;
