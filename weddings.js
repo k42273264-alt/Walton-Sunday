@@ -37,32 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Testimonial Carousel
-  const cards = document.querySelectorAll('.testimonial-card');
-  const prevBtn = document.querySelector('.carousel-prev');
-  const nextBtn = document.querySelector('.carousel-next');
-  let current = 0;
+  // const cards = document.querySelectorAll('.testimonial-card');
+  // const prevBtn = document.querySelector('.carousel-prev');
+  // const nextBtn = document.querySelector('.carousel-next');
+  // let current = 0;
 
-  function showCard(index) {
-    cards.forEach((card, i) => {
-      card.classList.toggle('active', i === index);
-    });
-  }
+  // function showCard(index) {
+  //   cards.forEach((card, i) => {
+  //     card.classList.toggle('active', i === index);
+  //   });
+  // }
 
-  prevBtn.addEventListener('click', () => {
-    current = (current === 0) ? cards.length - 1 : current - 1;
-    showCard(current);
-  });
+  // prevBtn.addEventListener('click', () => {
+  //   current = (current === 0) ? cards.length - 1 : current - 1;
+  //   showCard(current);
+  // });
 
-  nextBtn.addEventListener('click', () => {
-    current = (current === cards.length - 1) ? 0 : current + 1;
-    showCard(current);
-  });
+  // nextBtn.addEventListener('click', () => {
+  //   current = (current === cards.length - 1) ? 0 : current + 1;
+  //   showCard(current);
+  // });
 
   // Auto-play
-  setInterval(() => {
-    current = (current === cards.length - 1) ? 0 : current + 1;
-    showCard(current);
-  }, 6000);
+  // setInterval(() => {
+  //   current = (current === cards.length - 1) ? 0 : current + 1;
+  //   showCard(current);
+  // }, 6000);
 
   // Scroll Animations
   const elements = document.querySelectorAll('[data-animate]');
